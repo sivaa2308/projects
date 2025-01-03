@@ -1,0 +1,317 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* General Reset */
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh; /* Full viewport height for the body */
+    overflow: hidden; /* Prevents body from scrolling */
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%; /* Full height for the header container */
+}
+
+.header-1 {
+    flex: 0.3;
+    background-color: #172f57;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: sticky; /* Keeps it sticky */
+    top: 0;
+    height: 100vh; /* Full height */
+}
+
+.header-1 h1 {
+    margin: 0;
+    padding-top: 55px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem; /* Adjust size for large headings */
+    font-weight: 100; /* Bold weight */
+    letter-spacing: 1px;
+    color:#D3D3D3; /* Light cyan to contrast with a dark background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+}
+
+
+.header-1 h3 {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 200; /* Bold for headings */
+    letter-spacing: 0.5px;
+    color:#D3D3D3;
+}
+
+
+
+
+.header-1 .index-ul{
+
+    list-style-type: none;
+    padding-top: 35%;  
+
+}
+
+.header-1 .index-ul li{
+    font-family: 'Marcellus SC', serif;
+    padding: 6px;
+}
+
+
+.header-1 .index-ul li a {
+    position: relative;
+    font-size: 20px;
+    color: #D3D3D3;
+    text-decoration: none;
+    transition: color 0.5s ease;
+    
+}
+
+.header-1 .index-ul li a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    height: 3px;
+    gap: 1px;
+    background-color: rgb(83, 235, 235);
+    
+}
+
+.header-1 .index-ul li a:active {
+    color: #6db5d1;
+    font-weight: 500;
+    
+    
+}
+
+.header-1 .index-ul li a:hover {
+    color: rgb(156, 231, 231);
+    transition: color 0.7s ease;
+
+}
+
+.header-1 .index-ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(83, 235, 235);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s ease;
+}
+
+.header-1 .index-ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.symbols-ul{
+
+    letter-spacing: 7px;
+    padding-top: 8%;
+    
+
+}
+
+
+
+.symbols-ul a {
+    position: relative;
+    font-size: 30px;
+    color: #D3D3D3;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.symbols-ul a.active {
+    color: #a2d5e9; /* Highlight color */
+    font-weight: bold;
+}
+
+.symbols-ul a:hover {
+    color: rgb(156, 231, 231);
+    transition: color 0.5s ease;
+
+}
+
+
+.header-2 {
+    flex: 0.7;
+    background-color: #172f57;
+    overflow-y: scroll; /* Enable scrolling for this section */
+    height: 100vh; /* Ensure it fills the remaining height */
+    padding: 20px; /* Add padding for content */
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory; /* Ensure padding does not affect layout */
+}
+
+
+.sec-home {
+    height: 100vh; /* Full viewport height for each section */
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start; /* Ensures the section snaps into place */
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    position: relative; /* Important: Sets the reference for absolute positioning */
+}
+
+.header-2 .sec-home .img-cont {
+    border-radius: 50%;
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(14, 14, 34, 0.3), #17315f, #2d4e75); /* Initial gradient */
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 90px rgba(27, 6, 83, 0.3);
+    transition: transform 0.7s ease, background 0.7s ease, box-shadow 0.7s ease; /* Smooth transition for hover and return */
+}
+
+.header-2 .sec-home .img-cont:hover {
+    transform: scale(1.1); /* Slightly enlarges the element */
+    background: linear-gradient(135deg, #172f57, #3d6b94, #237f96);
+    /*animation: colour 5s linear infinite;*/
+    box-shadow: 0 0 120px rgba(60, 85, 150, 0.5); /* Enhances the shadow effect */
+  
+}
+
+@keyframes colour {
+
+    0%{
+        background: linear-gradient(135deg, #172f57, #3d6b94, #237f96);
+    }
+
+    50%{
+
+        background: linear-gradient(135deg, #237f96,  #172f57,  #3d6b94);
+    }
+
+    100%{
+        background: linear-gradient(135deg,  #3d6b94, #237f96 , #172f57);
+    }
+
+    
+}
+
+.header-2 .sec-home img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid #2c4f8f;
+    position: relative;
+    z-index: 5;
+    opacity: 70%;
+}
+
+.header-2 .sec-home .home-p {
+    width: 40%;
+    height: 20%;
+    background-color: #172f57;
+    position: absolute;
+    object-fit: contain;
+    display: flex; /* Enables centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    overflow: hidden; /* Hides overflow text */
+    bottom: 20%;
+    left: 10%;
+}
+
+.header-2 .sec-home .home-p p {
+    color: #D3D3D3;
+    font-family: 'Marcellus SC', serif;
+    font-size: 20px; 
+    line-height: 1; 
+    margin: 0; 
+    text-align: center; 
+   /* animation: alter-clr 5s infinite alternate;*/
+    z-index: 6;
+    text-shadow: 0 0 10 black;
+}
+
+
+@keyframes alter-clr{
+    0%{
+        color: #f1eded;
+    }
+
+    50%{
+
+        color:#99d0f5ef;
+    }
+
+    100%{
+        color: #D3D3D3;
+    }
+}
+
+
+.sec-about{
+    height: 100vh; /* Full viewport height for each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    scroll-snap-align: start; /* Ensures the section snaps into place */
+    padding: 90px;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0cap;
+    font-size: 18px;
+    color: #ffffffe7;
+    font-family: 'Marcellus SC', serif;
+}
+
+.sec-project{
+    height: 100vh; /* Full viewport height for each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    scroll-snap-align: start; /* Ensures the section snaps into place */
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+.sec-about h1{
+    color: #ffffffe7;
+    font-size: 35px;
+
+}
+
+.sec-about p{
+    font-family:'Cormorant SC', serif; 
+    font-weight: 100;
+    color: #ffffffe7;
+    font-family: 'Marcellus SC', serif;
+}
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Circular Sticker</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #172f57; /* Background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full screen height */
+    }
+
+    .sticker-container {
+      width: 300px; /* Sticker size */
+      height: 300px;
+      border-radius: 50%; /* Circular shape */
+      position: relative; /* For pseudo-element positioning */
+      background: linear-gradient(135deg, #172f57, #2c4f8f); /* Gradient border */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sticker-container::before {
+      content: "";
+      position: absolute;
+      width: 270px; /* Slightly smaller than the container */
+      height: 270px;
+      border-radius: 50%;
+      background-color: #172f57; /* Match background color */
+      z-index: 1; /* Places it above the gradient */
+    }
+
+    .sticker {
+      width: 250px; /* Image size */
+      height: 250px;
+      border-radius: 50%; /* Circular image */
+      object-fit: cover;
+      position: relative; /* Above the background */
+      z-index: 2; /* Above the circular background */
+    }
+  </style>
+</head>
+<body>
+  <div class="sticker-container">
+    <!-- Add the image -->
+    <img src="IMG_7952.JPG" alt="Circular Sticker" class="sticker">
+  </div>
+</body>
+</html>
