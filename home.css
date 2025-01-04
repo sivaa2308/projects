@@ -2,9 +2,14 @@ html {
     scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+
 
 /* General Reset */
 body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     display: flex;
     height: 100vh; /* Full viewport height for the body */
@@ -20,10 +25,10 @@ body {
 
 .header-1 {
     flex: 0.3;
-    background-color: #172f57;
+    background-color:  #0a192f;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    /*text-align: center;*/
     position: sticky; /* Keeps it sticky */
     top: 0;
     height: 100vh; /* Full height */
@@ -31,22 +36,26 @@ body {
 
 .header-1 h1 {
     margin: 0;
-    padding-top: 55px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 4rem; /* Adjust size for large headings */
-    font-weight: 100; /* Bold weight */
-    letter-spacing: 1px;
+    padding-top: 100px;
+    font-size: 60px;
+    padding-left: 75px;
+    font-weight: 600; /* Bold weight */
+ /* Bright teal for text */
+        text-shadow: 2px 2px 5px rgba(0, 255, 170, 0.3); /* Soft glow effect */
+    
+    /*letter-spacing: 2px;*/
     color:#D3D3D3; /* Light cyan to contrast with a dark background */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+    /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  Soft shadow for depth */
 }
 
 
 .header-1 h3 {
     margin: 0;
-    padding-bottom: 20px;
-    font-size: 20px;
-    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 200; /* Bold for headings */
+    padding-bottom: 0px;
+    padding-left: 75px;
+    padding-top: 5px;
+    font-size: 25px;
+    font-weight: 550; /* Bold for headings */
     letter-spacing: 0.5px;
     color:#D3D3D3;
 }
@@ -57,19 +66,21 @@ body {
 .header-1 .index-ul{
 
     list-style-type: none;
-    padding-top: 35%;  
+    padding-top: 20%;  
+    padding-left: 75px;
 
 }
 
 .header-1 .index-ul li{
-    font-family: 'Marcellus SC', serif;
+   
     padding: 6px;
 }
 
 
 .header-1 .index-ul li a {
     position: relative;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
     color: #D3D3D3;
     text-decoration: none;
     transition: color 0.5s ease;
@@ -83,7 +94,7 @@ body {
     bottom: 0;
     width: 20%;
     height: 3px;
-    gap: 1px;
+    gap: 3px;
     background-color: rgb(83, 235, 235);
     
 }
@@ -123,6 +134,7 @@ body {
 
     letter-spacing: 7px;
     padding-top: 8%;
+    padding-left: 75px;
     
 
 }
@@ -131,7 +143,7 @@ body {
 
 .symbols-ul a {
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
     color: #D3D3D3;
     text-decoration: none;
     transition: color 0.5s ease;
@@ -151,7 +163,7 @@ body {
 
 .header-2 {
     flex: 0.7;
-    background-color: #172f57;
+    background-color:  #0a192f;
     overflow-y: scroll; /* Enable scrolling for this section */
     height: 100vh; /* Ensure it fills the remaining height */
     padding: 20px; /* Add padding for content */
@@ -178,7 +190,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg, rgba(14, 14, 34, 0.3), #17315f, #2d4e75); /* Initial gradient */
+    background: linear-gradient(135deg, rgba(33, 33, 83, 0.589),  #0a192f, #2d4e75); /* Initial gradient */
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -189,25 +201,25 @@ body {
 
 .header-2 .sec-home .img-cont:hover {
     transform: scale(1.1); /* Slightly enlarges the element */
-    background: linear-gradient(135deg, #172f57, #3d6b94, #237f96);
+    background: linear-gradient(135deg,  #0a192f, #252c57, #005e757e);
     /*animation: colour 5s linear infinite;*/
-    box-shadow: 0 0 120px rgba(60, 85, 150, 0.5); /* Enhances the shadow effect */
+    box-shadow: 0 0 120px rgba(55, 79, 141, 0.658); /* Enhances the shadow effect */
   
 }
 
 @keyframes colour {
 
     0%{
-        background: linear-gradient(135deg, #172f57, #3d6b94, #237f96);
+        background: linear-gradient(135deg,  #0a192f, #3d6b94, #237f96);
     }
 
     50%{
 
-        background: linear-gradient(135deg, #237f96,  #172f57,  #3d6b94);
+        background: linear-gradient(135deg, #237f96,   #0a192f,  #3d6b94);
     }
 
     100%{
-        background: linear-gradient(135deg,  #3d6b94, #237f96 , #172f57);
+        background: linear-gradient(135deg,  #3d6b94, #237f96 ,  #0a192f);
     }
 
     
@@ -227,7 +239,7 @@ body {
 .header-2 .sec-home .home-p {
     width: 40%;
     height: 20%;
-    background-color: #172f57;
+    background-color:  #0a192f;
     position: absolute;
     object-fit: contain;
     display: flex; /* Enables centering */
@@ -240,7 +252,7 @@ body {
 
 .header-2 .sec-home .home-p p {
     color: #D3D3D3;
-    font-family: 'Marcellus SC', serif;
+    
     font-size: 20px; 
     line-height: 1; 
     margin: 0; 
@@ -276,7 +288,7 @@ body {
     scroll-snap-align: start; /* Ensures the section snaps into place */
     padding: 90px;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
+  
     font-weight: 100;
     letter-spacing: 0cap;
     font-size: 18px;
@@ -304,10 +316,10 @@ body {
 }
 
 .sec-about p{
-    font-family:'Cormorant SC', serif; 
+   
     font-weight: 100;
     color: #ffffffe7;
-    font-family: 'Marcellus SC', serif;
+  
 }
 
 
