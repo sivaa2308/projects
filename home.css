@@ -6,16 +6,26 @@ html {
 
 
 
-
-/* General Reset */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    display: flex;
-    height: 100vh; /* Full viewport height for the body */
-    overflow: hidden; /* Prevents body from scrolling */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #172f57;
 }
 
+.spotlight {
+    position: fixed;
+    width: 900px;
+    height:900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(3, 77, 189, 0.5) 0%, rgba(23, 47, 87, 0.3) 60%, rgba(23, 47, 87, 0) 100%);
+    pointer-events: none;
+    transform: translate(-50%, -50%); /* This is key! */
+    z-index: 0;
+    transition: transform 0.1s ease-out;
+}
 .header {
     display: flex;
     flex-direction: row;
@@ -38,14 +48,26 @@ body {
     margin: 0;
     padding-top: 100px;
     font-size: 60px;
+    z-index: 11;
     padding-left: 75px;
     font-weight: 600; /* Bold weight */
- /* Bright teal for text */
-        text-shadow: 2px 2px 5px rgba(0, 255, 170, 0.3); /* Soft glow effect */
-    
+    /* Bright teal for text 
+    text-shadow: 2px 2px 5px rgba(0, 255, 170, 0.3);  Soft glow effect */   
     /*letter-spacing: 2px;*/
     color:#D3D3D3; /* Light cyan to contrast with a dark background */
     /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  Soft shadow for depth */
+}
+
+.header-1-h-container {
+    position: relative; /* Ensures z-index works */
+    width: 100%;
+    height: 40%;
+    background: transparent;
+    object-fit: contain;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    overflow: hidden; /* Hides overflow text */
+    z-index: 10; /* Above the spotlight */
 }
 
 
@@ -53,9 +75,10 @@ body {
     margin: 0;
     padding-bottom: 0px;
     padding-left: 75px;
+    z-index: 10;
     padding-top: 5px;
-    font-size: 25px;
-    font-weight: 550; /* Bold for headings */
+    font-size: 22px;
+    font-weight: 500; /* Bold for headings */
     letter-spacing: 0.5px;
     color:#D3D3D3;
 }
@@ -68,6 +91,7 @@ body {
     list-style-type: none;
     padding-top: 20%;  
     padding-left: 75px;
+    z-index: 10;
 
 }
 
@@ -95,19 +119,19 @@ body {
     width: 20%;
     height: 3px;
     gap: 3px;
-    background-color: rgb(83, 235, 235);
+    background-color:  #0755cafb;
     
 }
 
 .header-1 .index-ul li a:active {
-    color: #6db5d1;
+    color:  #0755cafb;
     font-weight: 500;
     
     
 }
 
 .header-1 .index-ul li a:hover {
-    color: rgb(156, 231, 231);
+    color:  #D3D3D3;
     transition: color 0.7s ease;
 
 }
@@ -119,7 +143,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background-color: rgb(83, 235, 235);
+    background-color: #0755cafb;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.7s ease;
@@ -130,35 +154,33 @@ body {
     transform-origin: left;
 }
 
-.symbols-ul{
-
+.symbols-ul {
     letter-spacing: 7px;
     padding-top: 8%;
     padding-left: 75px;
     
-
 }
 
-
-
 .symbols-ul a {
-    position: relative;
+    position: relative; /* Required for transform */
     font-size: 35px;
     color: #D3D3D3;
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color 0.5s ease, transform 0.5s ease; /* Combine transitions */
 }
+
+.symbols-ul a:hover {
+    color: rgb(156, 231, 231);
+    transform: translateY(-5px); /* Apply the animation */
+    transition: color 0.5s ease, transform 0.5s ease; /* Ensure transform transition */
+}
+
 
 .symbols-ul a.active {
     color: #a2d5e9; /* Highlight color */
     font-weight: bold;
 }
 
-.symbols-ul a:hover {
-    color: rgb(156, 231, 231);
-    transition: color 0.5s ease;
-
-}
 
 
 .header-2 {
@@ -239,7 +261,7 @@ body {
 .header-2 .sec-home .home-p {
     width: 40%;
     height: 20%;
-    background-color:  #0a192f;
+    background: transparent;
     position: absolute;
     object-fit: contain;
     display: flex; /* Enables centering */
@@ -248,6 +270,7 @@ body {
     overflow: hidden; /* Hides overflow text */
     bottom: 20%;
     left: 10%;
+    z-index: 10;
 }
 
 .header-2 .sec-home .home-p p {
@@ -258,8 +281,9 @@ body {
     margin: 0; 
     text-align: center; 
    /* animation: alter-clr 5s infinite alternate;*/
-    z-index: 6;
+    
     text-shadow: 0 0 10 black;
+    
 }
 
 
@@ -312,6 +336,7 @@ body {
 .sec-about h1{
     color: #ffffffe7;
     font-size: 35px;
+    z-index: 10;
 
 }
 
@@ -319,6 +344,7 @@ body {
    
     font-weight: 100;
     color: #ffffffe7;
+    z-index: 10;
   
 }
 
