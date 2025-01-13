@@ -12,7 +12,7 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background-color: #172f57;
+    background-color:#0a192f;
 }
 
 .spotlight {
@@ -20,10 +20,11 @@ body {
     width: 900px;
     height:900px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(3, 77, 189, 0.5) 0%, rgba(23, 47, 87, 0.3) 60%, rgba(23, 47, 87, 0) 100%);
+    background: radial-gradient(circle, rgba(3, 77, 189, 0.363) 0%, rgba(16, 39, 80, 0.11) 60%,#051d4705 100%);
     pointer-events: none;
     transform: translate(-50%, -50%); /* This is key! */
     z-index: 0;
+    opacity: 50%;
     transition: transform 0.1s ease-out;
 }
 .header {
@@ -40,8 +41,9 @@ body {
     flex-direction: column;
     /*text-align: center;*/
     position: sticky; /* Keeps it sticky */
-    top: 0;
+    top: 0;overflow: hidden;
     height: 100vh; /* Full height */
+    
 }
 
 .header-1 h1 {
@@ -54,7 +56,7 @@ body {
     /* Bright teal for text 
     text-shadow: 2px 2px 5px rgba(0, 255, 170, 0.3);  Soft glow effect */   
     /*letter-spacing: 2px;*/
-    color:#D3D3D3; /* Light cyan to contrast with a dark background */
+    color: #D3D3D3; /* Light cyan to contrast with a dark background */
     /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  Soft shadow for depth */
 }
 
@@ -84,30 +86,42 @@ body {
 }
 
 
-
-
-.header-1 .index-ul{
-
-    list-style-type: none;
-    padding-top: 20%;  
-    padding-left: 75px;
+.header-1 .index-container {
+    position: relative;
+    width: auto; /* Adjust width dynamically to fit content */
+    min-width: 200px; /* Set a minimum width for the container */
+    height: auto; /* Adjust height dynamically based on content */
+    padding: 20px; /* Consistent padding for inner spacing */
     z-index: 10;
-
+    background-color:#0a192f;
+    display: flex; /* Use flexbox for alignment */
+    left: 60px;
 }
 
-.header-1 .index-ul li{
-   
-    padding: 6px;
+.header-1 .index-ul {
+    list-style-type: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    z-index: 15;
+}
+
+.header-1 .index-ul li {
+    margin: 6px 0; /* Add vertical spacing between items */
+    padding-bottom: 25px; /* Consistent padding for list items */
+    z-index: 15;
 }
 
 
 .header-1 .index-ul li a {
-    position: relative;
+    position: absolute;
     font-size: 22px;
     font-weight: 500;
     color: #D3D3D3;
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color 0.5s ease , transform 0.7s ease;
     
 }
 
@@ -131,8 +145,10 @@ body {
 }
 
 .header-1 .index-ul li a:hover {
-    color:  #D3D3D3;
-    transition: color 0.7s ease;
+    color: white;
+    transition: color 0.7s ease , transform 0.7s ease ;
+    transform: scale(1.1); 
+    
 
 }
 
@@ -142,17 +158,20 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 3px;
-    background-color: #0755cafb;
+    height: 4px;
+    background-color: #0a6cfffb;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.7s ease;
+    transition: transform 0.8s ease;
 }
 
 .header-1 .index-ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+    
 }
+
+
 
 .symbols-ul {
     letter-spacing: 7px;
@@ -203,6 +222,7 @@ body {
     box-sizing: border-box;
     color: white;
     position: relative; /* Important: Sets the reference for absolute positioning */
+    z-index: 10;
 }
 
 .header-2 .sec-home .img-cont {
@@ -268,15 +288,17 @@ body {
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     overflow: hidden; /* Hides overflow text */
-    bottom: 20%;
+    bottom: 10%;
     left: 10%;
     z-index: 10;
 }
 
 .header-2 .sec-home .home-p p {
-    color: #D3D3D3;
-    
-    font-size: 20px; 
+    font-size: 22px;
+    font-family: "Cedarville Cursive", serif;
+  font-weight: 500;
+  font-style: normal;
+    color: #d3d3d3e7;
     line-height: 1; 
     margin: 0; 
     text-align: center; 
@@ -312,7 +334,6 @@ body {
     scroll-snap-align: start; /* Ensures the section snaps into place */
     padding: 90px;
     box-sizing: border-box;
-  
     font-weight: 100;
     letter-spacing: 0cap;
     font-size: 18px;
@@ -343,7 +364,7 @@ body {
 .sec-about p{
    
     font-weight: 100;
-    color: #ffffffe7;
+    color: #ffffffc2;
     z-index: 10;
   
 }
